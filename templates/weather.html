@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Wind</th>
+            <th>Weather</th>
+            </th>
+        </tr>
+        {% for item in data["list"]%}
+        <tr>
+            <td>{{  item["dt_txt"]}}</td>
+            <td>{{ item["main"]["temp"]}}°C</td>
+            <td>{{ item["main"]["humidity"]}}%</td>
+            <td>{{ item["wind"]["speed"]}}m/s</td>
+            <td>{{ item["weather"][0]["main"]}}, {{ item["weather"][0]["description"]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
